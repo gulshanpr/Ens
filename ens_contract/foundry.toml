@@ -1,0 +1,11 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+[rpc_endpoints]
+sepolia = "${RPC_URL}"
+arbitrum-goerli = "${RPC_URL}"
+
+[etherscan]
+arbitrum-sepolia = { key = "${ARBISCAN_API}", url = "https://api-goerli.arbiscan.io/api" }
