@@ -4,8 +4,7 @@ out = "out"
 libs = ["lib"]
 
 [rpc_endpoints]
-sepolia = "${RPC_URL}"
-arbitrum-goerli = "${RPC_URL}"
+arbitrum = "https://sepolia-rollup.arbitrum.io/rpc"
 
 [etherscan]
-arbitrum-sepolia = { key = "${ARBISCAN_API}", url = "https://api-goerli.arbiscan.io/api" }
+arbitrum = { key = "${ARBISCAN_API}", chain=421614 }

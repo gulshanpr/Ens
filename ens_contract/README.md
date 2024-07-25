@@ -1,25 +1,26 @@
-`forge script script/Ens.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier-url https://api-goerli.arbiscan.io/api
-`
+command to verify and deploy in one go
+
+`forge script script/Ens.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY arbitrum --verify --broadcast`
+
 toml config
 
-```
+```P
 [rpc_endpoints]
-sepolia = "${RPC_URL}"
-arbitrum-goerli = "${RPC_URL}"
+arbitrum = "https://sepolia-rollup.arbitrum.io/rpc"
 
 [etherscan]
-arbitrum-sepolia = { key = "${ARBISCAN_API}", url = "https://api-goerli.arbiscan.io/api" }
+arbitrum = { key = "${ARBISCAN_API}", chain=421614 }
 
 ```
 
 ```
 ##### arbitrum-sepolia
-✅  [Success]Hash: 0xb255e0f71bc4ad4092ea375cf76af93ab6c432c57be9e85654b8f6137246c79f
-Contract Address: 0x23705a0D49ECf00597f428Ef5b4F7A9c84F51c9d
-Block: 66334055
-Paid: 0.0000410334 ETH (410334 gas * 0.1 gwei)
+✅  [Success]Hash: 0x7466add71b9055eeb6f41101d5064a794d8d039a43bc4041762f2dfcc6bc8c55
+Contract Address: 0x2FfD94b1B127302Ed2Cd8870bDF686C968aAb296
+Block: 66521851
+Paid: 0.0004047426 ETH (4047426 gas * 0.1 gwei)
 
-✅ Sequence #1 on arbitrum-sepolia | Total Paid: 0.0000410334 ETH (410334 gas * avg 0.1 gwei)
+✅ Sequence #1 on arbitrum-sepolia | Total Paid: 0.0004047426 ETH (4047426 gas * avg 0.1 gwei)
 ```
 
-but still can not able to verify 😿😿
+to verify and deploy contract programmatically this should be the configurations of toml and command
